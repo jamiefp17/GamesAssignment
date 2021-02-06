@@ -7,6 +7,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "CustomMovementComponent.h"
+#include "Math/Vector.h"
 #include "PlayerCharacterPawn.generated.h"
 
 UCLASS()
@@ -26,6 +27,8 @@ public:
 		USpringArmComponent* springArm;
 	UPROPERTY(EditAnywhere)
 		UCameraComponent* camera;
+	UPROPERTY(EditAnywhere)
+		FVector springArmSocketOffset = { 0.0f, 0.0f, 60.0f };
 	
-
+	
 };
