@@ -16,8 +16,8 @@ void ACustomPlayerController::SetupInputComponent()
 	check(InputComponent);
 	InputComponent->BindAxis("Move Forwards", this, &ACustomPlayerController::CallForwards);
 	InputComponent->BindAxis("Turn", this, &ACustomPlayerController::CallTurn);
-	InputComponent->BindAction("Fire", EInputEvent::IE_Pressed, this,
-		&ACustomPlayerController::CallFire);
+	InputComponent->BindAxis("Strafe", this, &ACustomPlayerController::CallStrafe);
+	InputComponent->BindAction("Fire", EInputEvent::IE_Pressed, this, &ACustomPlayerController::CallFire);
 
 }
 void ACustomPlayerController::CallForwards(float Value)
@@ -40,5 +40,13 @@ void ACustomPlayerController::CallFire()
 	if (MyPawn)
 	{
 		MyPawn->playerMovement->Fire();
+	}
+}
+
+void ACustomPlayerController::CallStrafe(float Value)
+{
+	if (MyPawn)
+	{
+		MyPawn->playerMovement->Strafe(Value);
 	}
 }

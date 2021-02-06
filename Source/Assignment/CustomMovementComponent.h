@@ -16,9 +16,10 @@ public:
 	void MoveForward(float AxisValue);
 	void Turn(float AxisValue);
 	void Fire();
+	void Strafe(float AxisValue);
 private:
 	UPROPERTY(EditAnywhere)
-		float MoveSpeed = 100.0f;
+		float MoveSpeed = 250.0f;
 	UPROPERTY(EditAnywhere)
 		float RotationSpeed = 500.0f;
 		

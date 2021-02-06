@@ -21,5 +21,11 @@ void UCustomMovementComponent::Fire()
 	UE_LOG(LogTemp, Warning, TEXT("Fire Pressed"));
 }
 
+void UCustomMovementComponent::Strafe(float AxisY)
+{
+	FVector DeltaLocation = FVector(0.0f, AxisY * MoveSpeed * GetWorld()->DeltaTimeSeconds, 0.0f);
+	GetOwner()->AddActorLocalOffset(DeltaLocation, true);
+}
+
 
 

@@ -20,6 +20,7 @@ public:
 	virtual void CallForwards(float Value);
 	virtual void CallTurn(float Value);
 	virtual void CallFire();
+	virtual void CallStrafe(float Value);
 
 	APlayerCharacterPawn* MyPawn;
 };
